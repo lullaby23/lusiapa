@@ -135,7 +135,7 @@ Made with ❤️ by **@{UPDATES_CHANNEL}**""",
             [
                 [
                     InlineKeyboardButton(
-                        "🔰️ Group Gw 🔰️", url=f"https://t.me/{UPDATES_CHANNEL}"
+                        "🔰️ OFFICIAL GROUP 🔰️", url=f"https://t.me/{UPDATES_CHANNEL}"
                     )
                 ]
             ]
