@@ -15,7 +15,7 @@ async def close(_, query: CallbackQuery):
 @Client.on_callback_query(filters.regex("cbback"))
 async def cbback(_, query: CallbackQuery):
     await query.edit_message_text(
-        "**Here is The Control Menu Of Streamer!**",
+        "**Menu streaming!**",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
