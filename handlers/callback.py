@@ -60,12 +60,8 @@ Dan saya punya banyak fitur, budayakan membaca **/help** 😘!
 
 Made with ❤️ **@{UPDATES_CHANNEL}**""",
         reply_markup=InlineKeyboardMarkup(
- [
-                [
-                    InlineKeyboardButton(
-                        "➕ Add Me To Your Group ➕", url=f"https://t.me/{BOT_USERNAME}?startgroup=true"
-                    )
-                ],
+  [
+                
                 [
                     InlineKeyboardButton(
                         "👮‍♂️ Help Menu 👮‍♂️", callback_data="cbhelpmenu"
@@ -79,9 +75,6 @@ Made with ❤️ **@{UPDATES_CHANNEL}**""",
                 [
                     InlineKeyboardButton(
                         "🔰️ My Update Channel 🔰️", url=f"https://t.me/{UPDATES_CHANNEL}"
-                    ),
-                    InlineKeyboardButton(
-                        "⚜️ Support Group ⚜️", url="https://t.me/Nexa_bots"
                     )
                 ]
             ]
