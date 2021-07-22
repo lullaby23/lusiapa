@@ -72,7 +72,7 @@ async def help(_, message: Message):
     await message.reply_text(
         f"""<b>Hi {message.from_user.mention} 😉️!</b>
 
-**Here is the Help Menu For This Bot 😊!**""",
+**Menu Bantuan 😊!**""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
