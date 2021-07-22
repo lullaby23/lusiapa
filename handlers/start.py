@@ -128,25 +128,14 @@ __Note!__ ⚠️: This Project Is <b>Not Fully Owned By Me</b> !
 
 Credits To,
 
-<b><a href="https://github.com/CallsMusic">CallsMusic</a></b> - For Callsmusic (Main Code ❤️) !
-<b>Mr Dark Prince</b>
-<b>TheHamkercat</b>
-<b>AbirHasan2005</b>
-<b>DevsExpo</b>
-<b>TeamDaisyX</b>
-<b>N A C</b>
+Yang Punya Group
 
 Made with ❤️ by **@{UPDATES_CHANNEL}**""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "🔰️ My Update Channel 🔰️", url=f"https://t.me/{UPDATES_CHANNEL}"
-                    )
-                ],
-                [
-                    InlineKeyboardButton(
-                        "⚜️ Support Group ⚜️", url="https://t.me/Nexa_bots"
+                        "🔰️ Group Gw 🔰️", url=f"https://t.me/{UPDATES_CHANNEL}"
                     )
                 ]
             ]
@@ -175,7 +164,7 @@ async def vc(_, message: Message):
              😌️  **Voice Chat Link** 😌️
 ____________________------------______________________
 
-👉️ [Here Is Your Voice Chat Link](https://t.me/{message.chat.username}?voicechat) 👈️
+👉️ [Nih Link Voicetnya](https://t.me/{message.chat.username}?voicechat) 👈️
 ____________________------------______________________
 
 Enjoy 😌️❤️!""",
@@ -183,15 +172,12 @@ Enjoy 😌️❤️!""",
             [
                 [
                     InlineKeyboardButton(
-                        "↗️ Share Voice Chat Invitation ↗️", url=f"https://t.me/share/url?url=**Join%20Our%20Group%20Voice%20Chat%20😉%20%20{VC_LINK}%20❤️**"
+                        "↗️ Share ↗️", url=f"https://t.me/share/url?url=**Join%20Our%20Group%20Voice%20Chat%20😉%20%20{VC_LINK}%20❤️**"
                     )
                 ],
                 [
                     InlineKeyboardButton(
-                        "🔰️ Update Channel 🔰️", url=f"https://t.me/{UPDATES_CHANNEL}"
-                    ),
-                    InlineKeyboardButton(
-                        "⚜️ Support Group ⚜️", url="https://t.me/Nexa_bots"
+                        "🔰️ OFFICIAL GROUP 🔰️", url=f"https://t.me/{UPDATES_CHANNEL}"
                     )
                 ]
             ]
@@ -213,15 +199,15 @@ async def search(_, message: Message):
         parse_mode="markdown"
     )
     await message.reply_text(
-        "💁🏻‍♂️ Do you want to search for a YouTube video?",
+        "💁🏻‍♂️ Lu mau nyari youtube video?",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "✅ Yeah", switch_inline_query_current_chat=""
+                        "✅ Iya", switch_inline_query_current_chat=""
                     ),
                     InlineKeyboardButton(
-                        "Nope ❌", callback_data="close"
+                        "Enggk ❌", callback_data="close"
                     )
                 ]
             ]
