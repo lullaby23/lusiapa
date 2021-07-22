@@ -31,9 +31,8 @@ async def start(_, message: Message):
 Saya Bot Musik! Bot yang kuat untuk memutar musik di Group Chat Anda 😇!
 Dan saya punya banyak fitur, budayakan membaca **/help** 😘!
 Made with ❤️ **@{UPDATES_CHANNEL}**""",
-
-        reply_markup=InlineKeyboardMarkup(
-            [
+    reply_markup=InlineKeyboardMarkup(
+  [
                 
                 [
                     InlineKeyboardButton(
@@ -53,7 +52,6 @@ Made with ❤️ **@{UPDATES_CHANNEL}**""",
             ]
         )
     )
-
 
 # Help Menu
 
