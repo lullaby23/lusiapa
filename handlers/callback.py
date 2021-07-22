@@ -60,6 +60,12 @@ Dan saya punya banyak fitur, budayakan membaca **/help** 😘!
 
 Made with ❤️ **@{UPDATES_CHANNEL}**""",
         reply_markup=InlineKeyboardMarkup(
+ [
+                [
+                    InlineKeyboardButton(
+                        "➕ Add Me To Your Group ➕", url=f"https://t.me/{BOT_USERNAME}?startgroup=true"
+                    )
+                ],
                 [
                     InlineKeyboardButton(
                         "👮‍♂️ Help Menu 👮‍♂️", callback_data="cbhelpmenu"
