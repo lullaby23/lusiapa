@@ -70,8 +70,6 @@ Made with ❤️ **@{UPDATES_CHANNEL}**""",
                         "🔰️ Channel Gw 🔰️", url=f"https://t.me/{UPDATES_CHANNEL}"
                     )
                 ]
-            ]
-        )
     )
     
 
@@ -87,12 +85,12 @@ async def cbhelpmenu(_, query: CallbackQuery):
             [
                 [
                     InlineKeyboardButton(
-                        "🤔 How To Use Me 🤔", callback_data="cbhowtouse"
+                        "🤔 Cara Pake Baca Ya Tot 🤔", callback_data="cbhowtouse"
                     )
                 ],
                 [
                     InlineKeyboardButton(
-                        "Get Lyrics", callback_data="cbgetlyrics"
+                        "Lirik", callback_data="cbgetlyrics"
                     ),
                     InlineKeyboardButton(
                         "YT Search", callback_data="cbytsearch"
@@ -111,7 +109,7 @@ async def cbhelpmenu(_, query: CallbackQuery):
                         "Delete Commands", callback_data="cbdelcmds"
                     ),
                     InlineKeyboardButton(
-                        "Quotely", callback_data="cbquotely"
+                        "Qoutes", callback_data="cbquotely"
                     )
                 ]
             ]
