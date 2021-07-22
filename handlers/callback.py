@@ -64,12 +64,12 @@ Made with ❤️ **@{UPDATES_CHANNEL}**""",
                 
                 [
                     InlineKeyboardButton(
-                        "👮‍♂️ Help Menu 👮‍♂️", callback_data="cbhelpmenu"
+                        "👮‍♂️ Menu Bantuan 👮‍♂️", callback_data="cbhelpmenu"
                     )
                 ],
                 [
                     InlineKeyboardButton(
-                        "📦 Source Code 📦", url="https://github.com/Itz-fork/Callsmusic-Plus"
+                        "📦 Code 📦", url=f"https://t.me/{UPDATES_CHANNEL}"
                     )
                 ],
                 [
@@ -89,7 +89,7 @@ async def cbhelpmenu(_, query: CallbackQuery):
     await query.edit_message_text(
         f"""<b>Hi {query.message.from_user.mention} 😉️!</b>
 
-**Here is the Help Menu For This Bot 😊!**""",
+**Menu Bantuan Bot Ini 😊!**""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
@@ -132,11 +132,6 @@ async def cbhowtouse(_, query: CallbackQuery):
     await query.edit_message_text(
         f"""<b>How To Use This Bot?</b>
 
-**Setting Up The Bot:**
-    1. Add **{BOT_USERNAME}** Bot and @{(await USER.get_me()).username} To Your Group! (Send `/joingrp` to your group! Streamer Will Automatically join)
-    2. Give Admin To **{BOT_USERNAME}** and **@{(await USER.get_me()).username}** !
-
- 
 **Using Player Commands:**
     1. **Group Admin Only Commands 👮 ,**
      - `/play` - Reply to supported url, Reply to Audio File or Send `/play` with [Supported Url](https://ytdl-org.github.io/youtube-dl/supportedsites.html)
@@ -166,9 +161,6 @@ async def cbhowtouse(_, query: CallbackQuery):
     2. **Other Commands,**
      - `/vc` - To Get and Share Voice Chat Link. (Public Groups Only)
 
-
-**Supported Url List:** https://ytdl-org.github.io/youtube-dl/supportedsites.html
-
 Made with ❤️ by **@{UPDATES_CHANNEL}**""",
         reply_markup=InlineKeyboardMarkup(
             [
@@ -177,7 +169,7 @@ Made with ❤️ by **@{UPDATES_CHANNEL}**""",
                         "Supported Url List", url="https://ytdl-org.github.io/youtube-dl/supportedsites.html"
                     ),
                     InlineKeyboardButton(
-                        "◀️ Back ◀️", callback_data="cbhelpmenu"
+                        "◀️ Kembali ◀️", callback_data="cbhelpmenu"
                     )
                 ]
             ]
@@ -196,7 +188,7 @@ async def cbgetlyrics(_, query: CallbackQuery):
 **Feature:** Get Lyrics For Provided Song Name!
 
 **Usage:**
-    - Send Your Song Name with `/lyrics` command.
+    - Temukan Lirik lagu mu dengan `/lyrics` command.
 
 **Example:** `/lyrics faded`
 
@@ -205,7 +197,7 @@ Made with ❤️ by **@{UPDATES_CHANNEL}**""",
             [
                 [
                     InlineKeyboardButton(
-                        "◀️ Back ◀️", callback_data="cbhelpmenu"
+                        "◀️ Kembali ◀️", callback_data="cbhelpmenu"
                     )
                 ]
             ]
@@ -241,7 +233,7 @@ Made with ❤️ by **@{UPDATES_CHANNEL}**""",
             [
                 [
                     InlineKeyboardButton(
-                        "◀️ Back ◀️", callback_data="cbhelpmenu"
+                        "◀️ Kembali ◀️", callback_data="cbhelpmenu"
                     )
                 ]
             ]
@@ -283,7 +275,7 @@ Made with ❤️ by **@{UPDATES_CHANNEL}**""",
             [
                 [
                     InlineKeyboardButton(
-                        "◀️ Back ◀️", callback_data="cbhelpmenu"
+                        "◀️ Kembali ◀️", callback_data="cbhelpmenu"
                     )
                 ]
             ]
@@ -310,7 +302,7 @@ Made with ❤️ by **@{UPDATES_CHANNEL}**""",
             [
                 [
                     InlineKeyboardButton(
-                        "◀️ Back ◀️", callback_data="cbhelpmenu"
+                        "◀️ Kembali ◀️", callback_data="cbhelpmenu"
                     )
                 ]
             ]
@@ -339,7 +331,7 @@ Made with ❤️ by **@{UPDATES_CHANNEL}**""",
             [
                 [
                     InlineKeyboardButton(
-                        "◀️ Back ◀️", callback_data="cbhelpmenu"
+                        "◀️ Kembali ◀️", callback_data="cbhelpmenu"
                     )
                 ]
             ]
@@ -381,7 +373,7 @@ Made with ❤️ by **@{UPDATES_CHANNEL}**""",
             [
                 [
                     InlineKeyboardButton(
-                        "◀️ Back ◀️", callback_data="cbhelpmenu"
+                        "◀️ Kembali ◀️", callback_data="cbhelpmenu"
                     )
                 ]
             ]
