@@ -53,10 +53,10 @@ async def controlset(_, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        "⏸ Pause ⏸", callback_data="cbpause"
+                        "⏸ Berhenti ⏸", callback_data="cbpause"
                     ),
                     InlineKeyboardButton(
-                        "▶️ Resume ▶️", callback_data="cbresume"
+                        "▶️ Lanjut ▶️", callback_data="cbresume"
                     )
                 ],
                 [
@@ -64,15 +64,15 @@ async def controlset(_, message: Message):
                         "⏩ Skip ⏩", callback_data="cbskip"
                     ),
                     InlineKeyboardButton(
-                        "⏹ End ⏹", callback_data="cbend"
+                        "⏹ Stop ⏹", callback_data="cbend"
                     )
                 ],
                 [
                     InlineKeyboardButton(
-                        "🔇 Mute 🔇", callback_data="cbmute"
+                        "🔇 Senyap 🔇", callback_data="cbmute"
                     ),
                     InlineKeyboardButton(
-                        "🔈 Unmute 🔈", callback_data="cbunmute"
+                        "🔈 Bunyikan 🔈", callback_data="cbunmute"
                     )
                 ]
             ]
@@ -86,18 +86,18 @@ async def controlset(_, message: Message):
 @authorized_users_only
 async def pause(_, message: Message):
     if callsmusic.pause(message.chat.id):
-        await message.reply_text("⏸ Paused")
+        await message.reply_text("⏸ Berhenti")
     else:
-        await message.reply_text("❗️ Nothing is playing")
+        await message.reply_text("❗️ Gak ada lagu yang dimulai")
 
 @Client.on_message(command(["resume", f"resume@{BOT_USERNAME}", "r"]))
 @errors
 @authorized_users_only
 async def resume(_, message: Message):
     if callsmusic.resume(message.chat.id):
-        await message.reply_text("🎧 Resumed")
+        await message.reply_text("🎧 Lanjut")
     else:
-        await message.reply_text("❗️ Nothing is paused")
+        await message.reply_text("❗️ Gak ada yang lagu yang bisa diberhentikan")
 
 
 @Client.on_message(command(["end", f"end@{BOT_USERNAME}", "e"]))
@@ -105,7 +105,7 @@ async def resume(_, message: Message):
 @authorized_users_only
 async def stop(_, message: Message):
     if message.chat.id not in callsmusic.active_chats:
-        await message.reply_text("❗️ Nothing is playing")
+        await message.reply_text("❗️ Gak ada lagu yang dimulai")
     else:
         try:
             queues.clear(message.chat.id)
@@ -113,7 +113,7 @@ async def stop(_, message: Message):
             pass
 
         await callsmusic.stop(message.chat.id)
-        await message.reply_text("✅ Cleared the queue and left the Voice Chat!")
+        await message.reply_text("✅ Menghapus playlist dan bot telah keluar dari voice chat!")
 
 
 @Client.on_message(command(["skip", f"skip@{BOT_USERNAME}", "s"]))
@@ -121,7 +121,7 @@ async def stop(_, message: Message):
 @authorized_users_only
 async def skip(_, message: Message):
     if message.chat.id not in callsmusic.active_chats:
-        await message.reply_text("❗️ Nothing is playing")
+        await message.reply_text("❗️ Gak ada lagu yang dimainin")
     else:
         queues.task_done(message.chat.id)
 
@@ -142,11 +142,11 @@ async def mute(_, message: Message):
     result = callsmusic.mute(message.chat.id)
 
     if result == 0:
-        await message.reply_text("🔇 Muted")
+        await message.reply_text("🔇 Berhenti")
     elif result == 1:
-        await message.reply_text("🔇 Already muted")
+        await message.reply_text("🔇 Sudah Berhenti")
     elif result == 2:
-        await message.reply_text("❗️ Not in voice chat")
+        await message.reply_text("❗️ Gak ada di voice chat manapun")
 
 
 @Client.on_message(command(["unmute", f"unmute@{BOT_USERNAME}", "um"]))
@@ -156,11 +156,11 @@ async def unmute(_, message: Message):
     result = callsmusic.unmute(message.chat.id)
 
     if result == 0:
-        await message.reply_text("🔈 Unmuted")
+        await message.reply_text("🔈 Senyap")
     elif result == 1:
-        await message.reply_text("🔈 Already unmuted")
+        await message.reply_text("🔈 Sudah Senyap")
     elif result == 2:
-        await message.reply_text("❗️ Not in voice chat")
+        await message.reply_text("❗️ Gak ada di voice chat manapun")
 
 
 # Music Player Callbacks (Control by buttons feature)
@@ -168,21 +168,21 @@ async def unmute(_, message: Message):
 @Client.on_callback_query(filters.regex("cbpause"))
 async def cbpause(_, query: CallbackQuery):
     if callsmusic.pause(query.message.chat.id):
-        await query.edit_message_text("⏸ Song Paused", reply_markup=BACK_BUTTON)
+        await query.edit_message_text("⏸ Lagu diberhentikan", reply_markup=BACK_BUTTON)
     else:
-        await query.edit_message_text("❗️ Nothing is playing, Lol!", reply_markup=BACK_BUTTON)
+        await query.edit_message_text("❗️ Gak ada lagu yang dimulai tolol!", reply_markup=BACK_BUTTON)
 
 @Client.on_callback_query(filters.regex("cbresume"))
 async def cbresume(_, query: CallbackQuery):
     if callsmusic.resume(query.message.chat.id):
         await query.edit_message_text("🎧 Song Resumed", reply_markup=BACK_BUTTON)
     else:
-        await query.edit_message_text("❗️ Nothing is paused, Lol!", reply_markup=BACK_BUTTON)
+        await query.edit_message_text("❗️ Gak ada yang di berhentikan tolol!", reply_markup=BACK_BUTTON)
 
 @Client.on_callback_query(filters.regex("cbend"))
 async def cbend(_, query: CallbackQuery):
     if query.message.chat.id not in callsmusic.active_chats:
-        await query.edit_message_text("❗️ Nothing is playing", reply_markup=BACK_BUTTON)
+        await query.edit_message_text("❗️ Gak ada lagu yang dimulai tolol", reply_markup=BACK_BUTTON)
     else:
         try:
             queues.clear(query.message.chat.id)
@@ -190,12 +190,12 @@ async def cbend(_, query: CallbackQuery):
             pass
 
         await callsmusic.stop(query.message.chat.id)
-        await query.edit_message_text("✅ Cleared the queue and left the Voice Chat!", reply_markup=BACK_BUTTON)
+        await query.edit_message_text("✅ Menghapus playlist dan bot telah keluar dari voice chat!", reply_markup=BACK_BUTTON)
 
 @Client.on_callback_query(filters.regex("cbskip"))
 async def cbskip(_, query: CallbackQuery):
      if query.message.chat.id not in callsmusic.active_chats:
-        await query.edit_message_text("❗️ Nothing is playing", reply_markup=BACK_BUTTON)
+        await query.edit_message_text("❗️ Gak ada lagu yang dimulai tolol!", reply_markup=BACK_BUTTON)
      else:
         queues.task_done(query.message.chat.id)
         
@@ -213,22 +213,22 @@ async def cbmute(_, query: CallbackQuery):
     result = callsmusic.mute(query.message.chat.id)
 
     if result == 0:
-        await query.edit_message_text("🔇 Muted", reply_markup=BACK_BUTTON)
+        await query.edit_message_text("🔇 Berhenti", reply_markup=BACK_BUTTON)
     elif result == 1:
-        await query.edit_message_text("🔇 Already muted", reply_markup=BACK_BUTTON)
+        await query.edit_message_text("🔇 Sudah Berhenti", reply_markup=BACK_BUTTON)
     elif result == 2:
-        await query.edit_message_text("❗️ Not in voice chat", reply_markup=BACK_BUTTON)
+        await query.edit_message_text("❗️ Gak ada voice chat", reply_markup=BACK_BUTTON)
 
 @Client.on_callback_query(filters.regex("cbunmute"))
 async def cbunmute(_, query: CallbackQuery):
     result = callsmusic.unmute(query.message.chat.id)
 
     if result == 0:
-        await query.edit_message_text("🔈 Unmuted", reply_markup=BACK_BUTTON)
+        await query.edit_message_text("🔈 senyap", reply_markup=BACK_BUTTON)
     elif result == 1:
-        await query.edit_message_text("🔈 Already unmuted", reply_markup=BACK_BUTTON)
+        await query.edit_message_text("🔈 Sudah Senyap", reply_markup=BACK_BUTTON)
     elif result == 2:
-        await query.edit_message_text("❗️ Not in voice chat", reply_markup=BACK_BUTTON)
+        await query.edit_message_text("❗️ Gak ada voice chat", reply_markup=BACK_BUTTON)
 
 
 # Anti-Command Feature On/Off
@@ -237,24 +237,24 @@ async def cbunmute(_, query: CallbackQuery):
 @authorized_users_only
 async def delcmdc(_, message: Message):
     if len(message.command) != 2:
-        await message.reply_text("Lol! This isn't the way to use this command 😂! Please read **/help** ☺️")
+        await message.reply_text("Woi tolol bukan gitu cara gunain commandnya 😂! Baca dulu maknya **/help** ☺️")
         return
     status = message.text.split(None, 1)[1].strip()
     status = status.lower()
     chat_id = message.chat.id
     if status == "on":
         if await delcmd_is_on(message.chat.id):
-            await message.reply_text("Eh! You are already enabled This Service 😉")
+            await message.reply_text("Woe! kamu sudah mengaktifkan layanan ini 😉")
             return
         else:
             await delcmd_on(chat_id)
             await message.reply_text(
-                "Successfully Enabled Delete Command Feature For This Chat 😇"
+                "Sukses mengatur hapus command di chat ini 😇"
             )
     elif status == "off":
         await delcmd_off(chat_id)
-        await message.reply_text("Successfully Disabled Delete Command Feature For This Chat 😌")
+        await message.reply_text("Sukses mematikan hapus command di chat ini 😌")
     else:
         await message.reply_text(
-            "Can't Understand What you're talking about! Maybe Read **/help** 🤔"
+            "Gw gak ngerti lu merintahin apa! Baca **/help** 🤔"
         )
