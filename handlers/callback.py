@@ -20,10 +20,10 @@ async def cbback(_, query: CallbackQuery):
             [
                 [
                     InlineKeyboardButton(
-                        "⏸ Pause ⏸", callback_data="cbpause"
+                        "⏸ Berhenti ⏸", callback_data="cbpause"
                     ),
                     InlineKeyboardButton(
-                        "▶️ Resume ▶️", callback_data="cbresume"
+                        "▶️ Lanjut ▶️", callback_data="cbresume"
                     )
                 ],
                 [
@@ -31,15 +31,15 @@ async def cbback(_, query: CallbackQuery):
                         "⏩ Skip ⏩", callback_data="cbskip"
                     ),
                     InlineKeyboardButton(
-                        "⏹ End ⏹", callback_data="cbend"
+                        "⏹ Stop ⏹", callback_data="cbend"
                     )
                 ],
                 [
                     InlineKeyboardButton(
-                        "🔇 Mute 🔇", callback_data="cbmute"
+                        "🔇 Senyap 🔇", callback_data="cbmute"
                     ),
                     InlineKeyboardButton(
-                        "🔈 Unmute 🔈", callback_data="cbunmute"
+                        "🔈 Dimulai 🔈", callback_data="cbunmute"
                     )
                 ]
             ]
@@ -54,34 +54,20 @@ async def startcb(_, query: CallbackQuery):
     await query.edit_message_text(
         f"""<b>Hi {query.message.from_user.mention} 😉️!</b>
 
-I'm The Nexa Music Bot! A Powerful Bot to Play Music in Your Group Voice Chat 😇!
+Saya Bot Musik! Bot yang kuat untuk memutar musik di Group Chat Anda 😇!
 
-Also I have more features! Please hit on **/help** to see them 😘!
+Dan saya punya banyak fitur, budayakan membaca **/help** 😘!
 
 Made with ❤️ **@{UPDATES_CHANNEL}**""",
         reply_markup=InlineKeyboardMarkup(
-            [
                 [
                     InlineKeyboardButton(
-                        "➕ Add Me To Your Group ➕", url=f"https://t.me/{BOT_USERNAME}?startgroup=true"
+                        "👮‍♂️ Menu Bantuan 👮‍♂️", callback_data="cbhelpmenu"
                     )
-                ],
+                ], 
                 [
                     InlineKeyboardButton(
-                        "👮‍♂️ Help Menu 👮‍♂️", callback_data="cbhelpmenu"
-                    )
-                ],
-                [
-                    InlineKeyboardButton(
-                        "📦 Source Code 📦", url="https://github.com/Itz-fork/Callsmusic-Plus"
-                    )
-                ],
-                [
-                    InlineKeyboardButton(
-                        "🔰️ My Update Channel 🔰️", url=f"https://t.me/{UPDATES_CHANNEL}"
-                    ),
-                    InlineKeyboardButton(
-                        "⚜️ Support Group ⚜️", url="https://t.me/Nexa_bots"
+                        "🔰️ Channel Gw 🔰️", url=f"https://t.me/{UPDATES_CHANNEL}"
                     )
                 ]
             ]
