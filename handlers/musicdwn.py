@@ -130,7 +130,7 @@ def song(client, message):
     for i in message.command[1:]:
         query += ' ' + str(i)
     print(query)
-    m = message.reply('**Please Wait! Im Searching For Your Song 🔎...**')
+    m = message.reply('**Tunggu bentar! Gw masih nyari lagu lu 🔎...**')
     ydl_opts = {"format": "bestaudio[ext=m4a]"}
     try:
         results = YoutubeSearch(query, max_results=1).to_dict()
@@ -149,17 +149,17 @@ def song(client, message):
 
     except Exception as e:
         m.edit(
-            "Sorry To Say but I can't find anything ❌!\n\nTry Another Keyword! Btw you spelled it properly 🤔?"
+            "Bukannya apanih ye... gw gk nemu lagu lu ❌!\n\nCoba keyword lain, ejaannya benerin juga 🤔?"
         )
         print(str(e))
         return
-    m.edit("**Downloading Your Song! Please Wait ⏰**")
+    m.edit("**Sabar Masih Download Lagu LU! Tunggu Ya ⏰**")
     try:
         with youtube_dl.YoutubeDL(ydl_opts) as ydl:
             info_dict = ydl.extract_info(link, download=False)
             audio_file = ydl.prepare_filename(info_dict)
             ydl.process_info(info_dict)
-        rep = f'🎙 **Title**: [{title[:35]}]({link})\n🎬 **Source**: `YouTube`\n⏱️ **Song Duration**: `{duration}`\n👁‍🗨 **Song Views**: `{views}`\n\n**Uploaded By**: **@{BOT_USERNAME}** \n **Join @{UPDATES_CHANNEL} 😉** '
+        rep = f'🎙 **Title**: [{title[:35]}]({link})\n🎬 **Sumber**: `YouTube`\n⏱️ **Song Duration**: `{duration}`\n👁‍🗨 **Dilihat**: `{views}`\n\n**Di upload Oleh**: **@{BOT_USERNAME}** \n **Join @{UPDATES_CHANNEL} 😉** '
         secmul, dur, dur_arr = 1, 0, duration.split(':')
         for i in range(len(dur_arr)-1, -1, -1):
             dur += (int(dur_arr[i]) * secmul)
@@ -200,13 +200,13 @@ async def jssong(_, message):
         return
     if is_downloading:
         await message.reply_text(
-            "Sorry! **Another download is in progress !** Try Again After Sometime!"
+            "Sorry! **Ada Downloadtan yang belum selesai !** Coba beberapa menit lagi!"
         )
         return
     is_downloading = True
     text = message.text.split(None, 1)[1]
     query = text.replace(" ", "%20")
-    m = await message.reply_text("**Please Wait! I'm Searching For Your Song 🔎...**")
+    m = await message.reply_text("**Tunggu bentar! Gw masih nyari lagu lu 🔎...**")
     try:
         songs = await arq.saavn(query)
         if not songs.ok:
@@ -215,9 +215,9 @@ async def jssong(_, message):
         sname = songs.result[0].song
         slink = songs.result[0].media_url
         ssingers = songs.result[0].singers
-        await m.edit("**Downloading Your Song! Please Wait ⏰**")
+        await m.edit("**Sabar Masih Download Lagu LU! Tunggu Ya ⏰**")
         song = await download_song(slink)
-        await m.edit("**Uploading Your Song! Please Wait ⏰**")
+        await m.edit("**Sabar Masih upload Lagu LU! Tunggu Ya ⏰**")
         await message.reply_audio(
             audio=song,
             title=sname,
@@ -244,13 +244,13 @@ async def deezsong(_, message):
         return
     if is_downloading:
         await message.reply_text(
-            "Sorry! **Another download is in progress !** Try Again After Sometime!"
+            "Sorry! **Ada Downloadtan yang belum selesai !** Coba beberapa menit lagi!"
         )
         return
     is_downloading = True
     text = message.text.split(None, 1)[1]
     query = text.replace(" ", "%20")
-    m = await message.reply_text("**Please Wait! I'm Searching For Your Song 🔎...**")
+    m = await message.reply_text("**Tunggu bentar! Gw masih nyari lagu lu🔎...**")
     try:
         songs = await arq.deezer(query, 1)
         if not songs.ok:
@@ -259,9 +259,9 @@ async def deezsong(_, message):
         title = songs.result[0].title
         url = songs.result[0].url
         artist = songs.result[0].artist
-        await m.edit("**Downloading Your Song! Please Wait ⏰**")
+        await m.edit("**Sabar Masih Download Lagu LU! Tunggu Ya ⏰**")
         song = await download_song(url)
-        await m.edit("**Uploading Your Song! Please Wait ⏰**")
+        await m.edit("**Sabar Masih Upload Lagu LU! Tunggu Ya ⏰**")
         await message.reply_audio(
             audio=song,
             title=title,
@@ -282,9 +282,9 @@ async def deezsong(_, message):
 @Client.on_message(filters.command(["lyrics", f"lyrics@{BOT_USERNAME}"]))
 async def lyrics_func(_, message):
     if len(message.command) < 2:
-        await message.reply_text("**Sike That's The Wrong Command Usage!** \nUse `/lyrics` (song name)")
+        await message.reply_text("**Woi tolol lu salah pake commandnya!** \nPake `/lyrics` (song name)")
         return
-    m = await message.reply_text("**Searching For Song Lyrics**")
+    m = await message.reply_text("**Bentar gw nyari lyric lagu lu**")
     query = message.text.strip().split(None, 1)[1]
     song = await arq.lyrics(query)
     lyrics = song.result
@@ -292,7 +292,7 @@ async def lyrics_func(_, message):
         await m.edit(f"__{lyrics}__")
         return
     lyrics = await paste(lyrics)
-    await m.edit(f"**Oops! Lyrics Too Long To Send!** \n**Your Song Lyrics: [Click Here]({lyrics})**")
+    await m.edit(f"**Sorry lirik terlalu panjang!** \n**Lirik Lu:[Klik Disini]({lyrics})**")
 
 # Youtube Video Download
 
@@ -301,7 +301,7 @@ async def ytmusic(client, message: Message):
     global is_downloading
     if is_downloading:
         await message.reply_text(
-            "Sorry! **Another download is in progress !** Try Again After Sometime!"
+            "Sorry! **Ada Downloadtan yang belum selesai !** Coba beberapa menit lagi!"
         )
         return
 
