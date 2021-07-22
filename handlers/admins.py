@@ -48,7 +48,7 @@ async def update_admin(client, message):
 @authorized_users_only
 async def controlset(_, message: Message):
     await message.reply_text(
-        "**Successfully Opened Control Menu Of Streamer Player!**",
+        "**Sukses membuka menu musik!**",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
@@ -146,7 +146,7 @@ async def mute(_, message: Message):
     elif result == 1:
         await message.reply_text("🔇 Sudah Berhenti")
     elif result == 2:
-        await message.reply_text("❗️ Gak ada di voice chat manapun")
+        await message.reply_text("❗️ Bot belum masuk voice chat tot")
 
 
 @Client.on_message(command(["unmute", f"unmute@{BOT_USERNAME}", "um"]))
@@ -160,7 +160,7 @@ async def unmute(_, message: Message):
     elif result == 1:
         await message.reply_text("🔈 Sudah Senyap")
     elif result == 2:
-        await message.reply_text("❗️ Gak ada di voice chat manapun")
+        await message.reply_text("❗️ Bot belum masuk voice chat tot")
 
 
 # Music Player Callbacks (Control by buttons feature)
@@ -217,7 +217,7 @@ async def cbmute(_, query: CallbackQuery):
     elif result == 1:
         await query.edit_message_text("🔇 Sudah Berhenti", reply_markup=BACK_BUTTON)
     elif result == 2:
-        await query.edit_message_text("❗️ Gak ada voice chat", reply_markup=BACK_BUTTON)
+        await query.edit_message_text("❗️ Bot belum masuk voice chat tot!.", reply_markup=BACK_BUTTON)
 
 @Client.on_callback_query(filters.regex("cbunmute"))
 async def cbunmute(_, query: CallbackQuery):
