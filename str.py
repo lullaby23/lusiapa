@@ -8,21 +8,12 @@ from pyrogram import Client
 
 print("""
 
- / ___|__ _| | |___|  \/  |_   _ ___(_) ___     |  _ \| |_   _ ___ 
-| |   / _` | | / __| |\/| | | | / __| |/ __|____| |_) | | | | / __|
-| |__| (_| | | \__ \ |  | | |_| \__ \ | (_|_____|  __/| | |_| \__ \.
- \____\__,_|_|_|___/_|  |_|\__,_|___/_|\___|    |_|   |_|\__,_|___/
-
-
-
  /\  /  _  _ |  | _ | _  _ .__.._ _  \  //  |\/|    _o _ |_)| _.   _ ._| 
 /--\ \_(_)(_)|  |(/_|(/_(_||(_|| | |  \/ \_ |  ||_|_>|(_ |  |(_|\/(/_| o 
                          _|                                     /        
 
 
-Github: https://github.com/Itz-fork/Callsmusic-Plus
-Docs: https://itz-fork.gitbook.io/callsmusic-plus
-Website: https://musicsnexabot.netlify.app
+Github: https://github.com/lullaby23/lusiapa
 """)
 time.sleep(5) # Just for show off
 print("Enter Your APP ID and API HASH To Generate Pyrogram String Session.")
