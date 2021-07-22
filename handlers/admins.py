@@ -175,7 +175,7 @@ async def cbpause(_, query: CallbackQuery):
 @Client.on_callback_query(filters.regex("cbresume"))
 async def cbresume(_, query: CallbackQuery):
     if callsmusic.resume(query.message.chat.id):
-        await query.edit_message_text("🎧 Song Resumed", reply_markup=BACK_BUTTON)
+        await query.edit_message_text("🎧 Dimulai", reply_markup=BACK_BUTTON)
     else:
         await query.edit_message_text("❗️ Gak ada yang di berhentikan tolol!", reply_markup=BACK_BUTTON)
 
