@@ -43,11 +43,6 @@ Made with ❤️ **@{UPDATES_CHANNEL}**""",
                 ],
                 [
                     InlineKeyboardButton(
-                        "📦 Pesan Bot Ke 📦", url="f"https://t.me/{UPDATES_CHANNEL}"
-                    )
-                ],
-                [
-                    InlineKeyboardButton(
                         "🔰️ Group Channel 🔰️", url=f"https://t.me/{UPDATES_CHANNEL}"
                     )
                 ]
