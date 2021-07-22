@@ -1,42 +1,42 @@
 {
-  "name": "CallsMusic-Plus",
-  "description": "Telegram Voice Chat Music Player Bot Based On Callsmusic with Extrac Features!",
+  "name": "TG-VC Music BOT",
+  "description": "Telegram Voice Chat Music Player Bot.",
   "keywords": ["music", "voicechat", "telegram"],
-  "repository": "https://github.com/Itz-fork/Callsmusic-Plus",
-  "logo": "https://telegra.ph/file/7fa5bd949db5061e6f361.jpg",
+  "repository": "https://github.com/lullaby23",
+  "logo": "https://telegra.ph/file/0d0888f862c9fad1f1688.jpg",
   "stack": "container",
   "env": {
     "API_ID": {
-      "description": "Your API_ID from my.telegram.org",
+      "description": "Your API_ID dari my.telegram.org",
       "required": true
     },
     "API_HASH": {
-      "description": "Your API_HASH from my.telegram.org",
+      "description": "Your API_HASH dari my.telegram.org",
       "required": true
     },
     "SESSION_NAME": {
-      "description": "Streamer(Dummy) Account's Pyrogram String Session. Read wiki.",
+      "description": "Streamer(Dummy) Akun Dummy string session.",
       "required": true
     },
     "BOT_TOKEN": {
-      "description": "Your Bot Token From @BotFather",
+      "description": "Bot Token Dari @BotFather",
       "required": true
     },
     "BOT_OWNER": {
-      "description": "Telegram Id Of yours!",
+      "description": "Telegram ID Mu",
       "required": true
     },
     "SUDO_USERS": {
-      "description": "ID's of Sudo Users. They admins everywhere (separate each id by space)",
+      "description": "ID Admin biar bisa akses admin command",
       "required": true
     },
     "DURATION_LIMIT": {
-      "description": "Max Time Limit For One Song. Fill in Minutes",
+      "description": "Limit Durasi Lagu (Detik)",
       "required": false,
       "value": "180"
     },
     "LOG_CHANNEL": {
-      "description": "Log Channel Where Bot Logs Go!",
+      "description": "Log Channel, informasi tentang bot",
       "required": true,
       "value": ""
     },
@@ -45,38 +45,38 @@
       "required": true
     },
     "BOT_USERNAME": {
-      "description": "Your Bot's Username without '@' !",
+      "description": "Bot username tanpa '@' !",
       "required": true
     },
     "ARQ_API_KEY": {
-      "description": "Your ARQ API key! Get your own with @ARQRobot !",
+      "description": "Your ARQ API key! Cari di @ARQRobot !",
       "required": false,
       "value": ""
     },
     "HEROKU_APP_NAME": {
-      "description": "Your Heroku App Name!",
+      "description": "Nama Aplikasi Heroku!",
       "required": true,
       "value": ""
     },
     "HEROKU_API_KEY": {
-      "description": "Your Heroku Api Key!",
+      "description": "Heroku App Key!",
       "required": true,
       "value": ""
     },
     "UPSTREAM_REPO": {
-      "description": "Github Repo Url. Only needed if you are using your own Fork!",
+      "description": "Github Repo Url. Kalo pake repo sendiri, klo gk jangan diubah!",
       "required": false,
-      "value": "https://github.com/Itz-fork/Callsmusic-Plus"
+      "value": "https://github.com/lullaby23/lusiapa"
     },
     "THUMB_URL": {
-      "description": "Thumbnail Url To Use in play, search commands. Add this only if you need a custom one instead of default thumbnail",
+      "description": "Gambar Thumbnail, upload di telegra.ph",
       "required": false,
-      "value": "https://telegra.ph/file/2ed47c81eda6b0624021d.jpg"
+      "value": "https://telegra.ph/file/0d0888f862c9fad1f1688.jpg"
     },
     "UPDATES_CHANNEL": {
-      "description": "Your Telegram Channel's Username without '@' . Not Needed by Default!",
+      "description": "Channel telegram mu tanpa'@' ",
       "required": false,
-      "value": "NexaBotsUpdates"
+      "value": "Foryoubbs"
     }
   }
 }
