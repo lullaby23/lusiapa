@@ -301,7 +301,7 @@ async def ytmusic(client, message: Message):
     global is_downloading
     if is_downloading:
         await message.reply_text(
-            "Sorry! **Ada Downloadtan yang belum selesai !** Coba beberapa menit lagi!"
+            "Sorry! **Ada downloadtan yang belum selesai !** Coba beberapa menit lagi!"
         )
         return
 
@@ -345,21 +345,21 @@ async def ytmusic(client, message: Message):
 
             if duration > 999:
                 await pablo.edit(
-                    f"❌ Videos longer than 999 minute(s) aren't allowed, the provided video is {duration} minute(s)"
+                    f"❌ Video terlalu panjang 999 minute(s) Gak boleh ya, Yang boleh tuh sampe {duration} minute(s)"
                 )
                 is_downloading = False
                 return
             ytdl_data = ytdl.extract_info(url, download=True)
 
     except Exception:
-        # await pablo.edit(event, f"**Failed To Download** \n**Error :** `{str(e)}`")
+        # await pablo.edit(event, f"**Gagal Download** \n**Error :** `{str(e)}`")
         is_downloading = False
         return
 
     c_time = time.time()
     file_stark = f"{ytdl_data['id']}.mp4"
-    YTVID_BUTTONS = InlineKeyboardMarkup([[InlineKeyboardButton("📺 Watch On YouTube 📺", url=f"{mo}")]])
-    capy = f"**🎧️ Music Video Name:** `{thum}` \n\n**👨‍💻️ Your Keyword:** `{urlissed}` \n**😉️ YouTube Channel:** `{thums}` \n**🔗️ Video Link :** `{mo}`"
+    YTVID_BUTTONS = InlineKeyboardMarkup([[InlineKeyboardButton("📺 Nonton Di Youtube 📺", url=f"{mo}")]])
+    capy = f"**🎧️ Judul Music:** `{thum}` \n\n**👨‍💻️ Keyword  mu:** `{urlissed}` \n**😉️ YouTube Channel:** `{thums}` \n**🔗️ Link Video :** `{mo}`"
     await client.send_video(
         message.chat.id,
         video=open(file_stark, "rb"),
@@ -373,7 +373,7 @@ async def ytmusic(client, message: Message):
         progress_args=(
             pablo,
             c_time,
-            f"`Please Wait! I'm Uploading` **{urlissed}** `From YouTube!`",
+            f"`Sabar! Masih Upload` **{urlissed}** `Dari Youtube!`",
             file_stark,
         ),
     )
