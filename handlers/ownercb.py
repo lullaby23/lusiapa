@@ -11,23 +11,23 @@ def is_that_owner(func):
         if query.from_user.id == mahowner:
             return await func(message, query)
         else:
-            await query.answer("You Go Away, This isn't For You!", show_alert=True)
+            await query.answer("Cabut Lu, ini bukan buat lu!", show_alert=True)
             return
     
     return ownermelol
 
-OWNER_TEXT = "**Hello My Master 😇!** Please select option from below buttons \n\n ~ @NexaBotsUpdates"
+OWNER_TEXT = "**Hai Lord 😇!** Pilih tombol di bawah ini \n\n ~ Ya anjeng"
 
 OWNER_HELPCB=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "⚙️ Owner Tools ⚙️", callback_data="cbownertools"
+                        "⚙️ Alat Owner ⚙️", callback_data="cbownertools"
                     )
                 ],
                 [
                     InlineKeyboardButton(
-                        "🧑‍💻 User Help 🧑‍💻", callback_data="cbhelpmenu"
+                        "🧑‍💻 Tutorial Pengguna 🧑‍💻", callback_data="cbhelpmenu"
                     )
                 ]
             ]
@@ -40,7 +40,7 @@ OWNER_HELPCB=InlineKeyboardMarkup(
 @is_that_owner
 async def cbownertools(_, query: CallbackQuery):
     await query.edit_message_text(
-        f"""**He he! You Opened Owner Menu!
+        f"""**He he! kamu membuka Owner Menu!
 
 Please Select an Option From Below buttons 😊!**""",
         reply_markup=InlineKeyboardMarkup(
@@ -78,22 +78,22 @@ async def cbbans(_, query: CallbackQuery):
     await query.edit_message_text(
         f"""<b>Help For Bans Plugin</b>
 
-**Feature:** Ban Users From Using This Bot!
+**Feature:** Ban Pengguna dengan fitur ini!
 
 **Usage:**
-    - Send User ID of that user, Ban Duration and Ban Reason with `/ban` command.
+    - Kirim id user, Durasi Ban dan alasan dengan `/ban` di depan.
 
 
 **Example:** `/ban 1234567891 2 Test`
 
- - This will ban user with \nUser ID: `1234567891` \nFor: `2 Days` \nReason will be: `Test`
+ - Ini akan ban pengguna \nUser ID: `1234567891` \nFor: `2 Hari` \nAlasan: `Test`
 
-Made with ❤️ by **@NexaBotsUpdates**""",
+Made with ❤️""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "◀️ Back ◀️", callback_data="cbownertools"
+                        "◀️ Kembali ◀️", callback_data="cbownertools"
                     )
                 ]
             ]
@@ -222,12 +222,12 @@ async def cbherokufuncs(_, query: CallbackQuery):
        This will delete variable named  `THUMB_URL`
 
 
-Made with ❤️ by **@NexaBotsUpdates**""",
+Made with ❤️""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        "◀️ Back ◀️", callback_data="cbownertools"
+                        "◀️ Kembali ◀️", callback_data="cbownertools"
                     )
                 ]
             ]
