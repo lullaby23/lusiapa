@@ -21,7 +21,7 @@ async def _(bot: Client, cmd: Message):
     await handle_user_status(bot, cmd)
 
 # Back Button
-BACK_BUTTON = InlineKeyboardMarkup([[InlineKeyboardButton("⬅️ Go Back ⬅️", callback_data="cbback")]])
+BACK_BUTTON = InlineKeyboardMarkup([[InlineKeyboardButton("⬅️ Kembali ⬅️", callback_data="cbback")]])
 
 @Client.on_message(~filters.private)
 async def delcmd(_, message: Message):
@@ -39,7 +39,7 @@ async def update_admin(client, message):
     for u in admins:
         new_ads.append(u.user.id)
     fuck[message.chat.id] = new_ads
-    await message.reply_text("**Successfully Updated Admin List ✅!**")
+    await message.reply_text("**Sukses update list admin ✅!**")
 
 
 # Control Menu Of Player
