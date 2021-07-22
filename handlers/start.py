@@ -27,21 +27,23 @@ async def start(_, message: Message):
         parse_mode="markdown"
     )
     await message.reply_text(
-         f"""<b>Hi {query.message.from_user.mention} 😉️!</b>
+        f"""<b>Hi {message.from_user.mention} 😉️!</b>
+        
 Saya Bot Musik! Bot yang kuat untuk memutar musik di Group Chat Anda 😇!
+
 Dan saya punya banyak fitur, budayakan membaca **/help** 😘!
+
 Made with ❤️ **@{UPDATES_CHANNEL}**""",
-    reply_markup=InlineKeyboardMarkup(
-  [
-                
+        reply_markup=InlineKeyboardMarkup(
+            [
                 [
                     InlineKeyboardButton(
-                        "👮‍♂️ Menu Bantuan 👮‍♂️", callback_data="cbhelpmenu"
+                        "👮‍♂️ Help Menu 👮‍♂️", callback_data="cbhelpmenu"
                     )
                 ],
                 [
                     InlineKeyboardButton(
-                        "📦 Code 📦", url=f"https://t.me/{UPDATES_CHANNEL}"
+                        "📦 Source Code 📦", url="https://github.com/Itz-fork/Callsmusic-Plus"
                     )
                 ],
                 [
