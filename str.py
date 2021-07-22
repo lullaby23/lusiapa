@@ -31,8 +31,8 @@ print("Enter Your APP ID and API HASH To Generate Pyrogram String Session.")
 async def main():
     async with Client(":memory:", api_id=int(input("API ID:")), api_hash=input("API HASH:")) as app:
         PYRO_SESSION = await app.export_session_string()
-        await app.send_message("me", f"**Pyrogram String Session:** \n`{PYRO_SESSION}` \n\n**Powered by @NexaBotsUpdates 😇**")
-        print(f"Here is your Pyrogram String Session: \n {PYRO_SESSION} \n\nPro tip: Check your saved message also, Backup of this session is also saved in there :)")
+        await app.send_message("me", f"**Pyrogram String Session:** \n`{PYRO_SESSION}` \n\n**Powered by @Foryoubbs 😇**")
+        print(f"Here is your Pyrogram String Session: \n {PYRO_SESSION} \n\nPro tip: Check Pesan Tresimpan, Backup sesion juga disimpan di pesan tersimpan :(")
 
 
 if __name__ == "__main__":
