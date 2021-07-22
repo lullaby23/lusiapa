@@ -16,32 +16,32 @@ async def addchannel(client, message):
         invitelink = await client.export_chat_invite_link(chid)
     except:
         await message.reply_text(
-            "<b>tf? Add me as admin of yor group first! Then Use This Command!</b> 😄",
+            "<b>tf? Jadiin gw admin dulu tolol!</b> 😄",
         )
         return
 
     try:
         user = await USER.get_me()
     except:
-        user.first_name =  "NexaMusicAssistant" # F this
+        user.first_name =  "TG - VC Music Bot" # F this
 
     try:
         await USER.join_chat(invitelink)
-        await USER.send_message(message.chat.id,"Ok! I joined here as you requested! Don't Spam or Else I will f you! 😂")
+        await USER.send_message(message.chat.id,"Ok! Saya sudah masuk sesuai request mu, jangan spam lagi anjeng! 😂")
     except UserAlreadyParticipant:
         await message.reply_text(
-            "<b>Streamer Account already in your chat!</b> Don't use commands like a <b>kid</b> 😒",
+            "<b>Gw sudah ada di group cok!</b> Jangan kaya <b>Bocil</b> 😒",
         )
         pass
     except Exception as e:
         print(e)
         await message.reply_text(
-            f"Shit! <b>❌ Flood Wait Error ❌ \n Sorry! user {user.first_name} couldn't join your group due to heavy join requests! Also make sure streamer account is not banned in your group. ✅"
+            f"Shit! <b>❌ Flood Wait Error ❌ \n Sorry! user {user.first_name} Maaf gw gk bisa masuk chat karena banyak yang merintah gw! Jangan sampe gw di ban dari group lu tot. ✅"
             "\n\nOr you can manually add @{(await USER.get_me()).username} to your Group!</b> 😉",
         )
         return
     await message.reply_text(
-            "<b>Streamer Account Joined</b> 😊",
+            "<b>Bot Telah bergabung</b> 😊",
         )
 
 # Remove Bot and Streamer Account From the group
@@ -56,7 +56,7 @@ async def strmleavegrp(USER, message):
         await USER.leave_chat(message.chat.id)
     except:
         await message.reply_text(
-            f"<b>Oops! Streamer Account Can't Leave Right Now! May Be Floodwait 🤔"
-            "\n\nOr You Can Manually Remove @{(await USER.get_me()).username} 🤗</b>",
+            f"<b>Oops! Gw gk bisa keluar dari voice chat banyak yang merintah gw sih 🤔"
+            "\n\nAtau kamubisa keluarin gwsecara manual @{(await USER.get_me()).username} 🤗</b>",
         )
         return
