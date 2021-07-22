@@ -62,14 +62,24 @@ Made with ❤️ **@{UPDATES_CHANNEL}**""",
         reply_markup=InlineKeyboardMarkup(
                 [
                     InlineKeyboardButton(
-                        "👮‍♂️ Menu Bantuan 👮‍♂️", callback_data="cbhelpmenu"
+                        "👮‍♂️ Help Menu 👮‍♂️", callback_data="cbhelpmenu"
                     )
-                ], 
+                ],
                 [
                     InlineKeyboardButton(
-                        "🔰️ Channel Gw 🔰️", url=f"https://t.me/{UPDATES_CHANNEL}"
+                        "📦 Source Code 📦", url="https://github.com/Itz-fork/Callsmusic-Plus"
+                    )
+                ],
+                [
+                    InlineKeyboardButton(
+                        "🔰️ My Update Channel 🔰️", url=f"https://t.me/{UPDATES_CHANNEL}"
+                    ),
+                    InlineKeyboardButton(
+                        "⚜️ Support Group ⚜️", url="https://t.me/Nexa_bots"
                     )
                 ]
+            ]
+        )
     )
     
 
